@@ -1,0 +1,17 @@
+Requisitos Funcionais:
+
+I) O software deve permitir o usuário jogar contra a inteligência artificial (computador)
+
+II) O software deve permitir dois usuários jogarem contra si
+
+III) O sofware deve permitir o usuário escolher o nível do computador entre fácil, médio e difícil
+
+IV) O Software deve permitir que o usuário aborte a partida
+
+V) O Software deve permitir que o usuário finalize o aplicativo
+
+VI) O Software deve mostrar o resultado da partida
+
+VII) O Software deve exibir o placar de partidas consecutivas
+
+VIII) O Software deve permitir o usuário escolher entre interface gráfica ou linha de comando
