@@ -1,0 +1,25 @@
+Caso de Uso: Selencionar Interface
+
+Sumário: O jogador selecionará interface gráfica
+
+Ator Primário:  Jogador
+
+Ator Secundário: s/ ator
+
+Pré-condição: s/ pré-condição
+
+Fluxo Principal:
+	1. - O jogador seleciona a interface
+	2. - O jogador confirma a escolha
+
+Fluxo Alternativo:
+	1.a - O jogador seleciona a interface texto
+	1.b - O jogador seleciona a interface gráfica
+
+Fluxo Exceção:
+	1.a - O jogador escolheu a opção errada
+		1.a.1 - O jogador seleciona opção inválida
+		1.a.2 - O sistema exibe uma mensagem de erro
+
+Pós-condição:
+	O tipo de interface foi selecionada.
