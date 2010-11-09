@@ -1,0 +1,26 @@
+Caso de Uso: Selecionar Oponente
+
+Sumário: O jogador selecionará o oponente
+
+Ator Primário:  Jogador
+
+Ator Secundário: s/ ator
+
+Pré-condição: 
+	O jogador dever ter escolhido a interface
+
+Fluxo Principal:
+	1. - O jogador seleciona o oponente
+	2. - O jogador confirma a escolha
+
+Fluxo Alternativo:
+	1.a - O jogador seleciona o oponente humano
+	1.b - O jogador seleciona o oponente máquina (computador)
+
+Fluxo Exceção:
+	1.a - O jogador escolheu a opção errada
+		1.a.1 - O jogador seleciona opção inválida
+		1.a.2 - O sistema exibe uma mensagem de erro
+
+Pós-condição:
+	O oponente é selecionado.
