@@ -1,0 +1,30 @@
+Caso de Uso: Abortar o Jogo
+
+Sumário: O jogador aborta o jogo.
+
+Ator Primário:  Jogador
+
+Ator Secundário: s/ ator
+
+Pré-condição:
+	A partida de jogo deve estar iniciado (jogo corrente)
+
+Fluxo Principal:
+	1. - O jogador aborta o jogo
+	2. - O jogador confirma a solicitação para abortar o jogo.
+
+Fluxo Alternativo:
+	2.a - O sistema inicia uma nova partida
+		2.a.1 - O sistema detecta a abortação do jogo
+		2.a.2 - O sistema inicia uma nova paritda
+
+Fluxo Exceção:
+	1.a - O jogador aborta o jogo sem nenhuma jogada efetuada
+		1.a.1 - O jogador tenta abortar o jogo sem nenhum dos jogadores ter efetivado uma jogada
+		1.a.2 - O sistema exibe uma mensagem de erro
+	1.b - O jogador não consegue abortar o jogo
+		1.a.1 - O jogador tenta abortar o jogo
+		1.a.2 - O sistema exibe uma mensagem de erro
+
+Pós-condição:
+	O jogo é abortado.
