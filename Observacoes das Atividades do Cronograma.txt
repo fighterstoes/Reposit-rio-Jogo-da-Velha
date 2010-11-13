@@ -1,0 +1,3 @@
+Conforme orientação do Professor Jucimar, as atividades contidas no cronograma relacionadas com a Interface Gráfica e Nível de Jogo serão realizadas posteriormente e previamente informadas, quando possível. Visto que para a data próxima de apresentação do Projeto do Jogo da Velha, as atividades a serem executadas são apenas em relação a parte Interface Linha de Comando.
+
+Dessa forma, as versões 0.6 a 1.0 do cronograma de atividades terão novas datas de realização a serem postadas posteriormente.
