@@ -10,7 +10,11 @@ public class UITicTacToeT {
 		Scanner sc = new Scanner(System.in);;
 		do{
 			ControlTicTacToe.startMach();
-			writeTable();
+			while(!ControlTicTacToe.isGameOver()){
+				writeTable();
+				readMoveT();
+				verifyStatus();
+			}
 			System.out.println("Deseja jogar outra partida? 0 = não\n");
 		}while(sc.nextInt()!=0);
 		System.exit(0);
@@ -36,7 +40,26 @@ public class UITicTacToeT {
 		System.out.println();
 	}
 
+	static void readMoveT(){
+		System.out.println("Jogador "+ControlTicTacToe.getTurn());
+		Scanner sc = new Scanner(System.in);
+		int i,j;
+		boolean ok;
+		do{
+			System.out.printf(" linha:");
+			i = sc.nextInt();
+			System.out.printf(" coluna:");
+			j = sc.nextInt();
+			ok = ControlTicTacToe.isValidMove(i,j);
+			if(!ok) System.out.println("Posição Ocupada");
+		}while(!ok);
+	}
 
+	private static void verifyStatus(){
+		if (ControlTicTacToe.isWon()){System.out.println("\t"+(ControlTicTacToe.getTurn()=='o'?'X':'O')+" ganhou!\n");}
+		else if (ControlTicTacToe.isDraw()){System.out.println("Ops! Velhou...\n");}
+		if(ControlTicTacToe.isWon()||ControlTicTacToe.isDraw()) writeTable();
+	}
 
 	public static void startGameTR() {
 		Scanner sc = new Scanner(System.in);
