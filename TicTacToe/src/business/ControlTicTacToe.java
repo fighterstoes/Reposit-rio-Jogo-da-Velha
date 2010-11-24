@@ -12,6 +12,10 @@ public class ControlTicTacToe {
 		RulesTicTacToe.startMach();
 	}
 	
+	public static void changeTurn() {
+		RulesTicTacToe.changeTurn();
+	}
+
 	public static boolean isValidMove(int i, int j) {
 		if(RulesTicTacToe.isValidMove(i,j)){
 			RulesTicTacToe.mark(i, j);
@@ -27,6 +31,10 @@ public class ControlTicTacToe {
 		return RulesTicTacToe.isGameOver();
 	}
 	
+	public static void robotMove() {
+		RulesTicTacToe.robotMove();
+	}
+
 	public static boolean isDraw() {
 		return RulesTicTacToe.isDraw();
 	}
