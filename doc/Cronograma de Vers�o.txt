@@ -1,0 +1,87 @@
+﻿                                                  
+
+                                                        CRONOGRAMA DE ATIVIDADES ATUALIZADO 
+========================================================================================================================================================
+Versao 0.0.0: Documentação
+
+When: 24/11/2010       Where: EST/UEA    WHY: Especificar atividades a serem exercidas no Projeto jogo da velha
+
+WHO: Luiz Sergio       How: Texto / Umbrello
+
+========================================================================================================================================================
+
+
+========================================================================================================================================================
+Versao 0.1.0: Selecionar Interface
+
+When: 24/11/2010       Where: EST/UEA    WHY: Adaptar e atualizar o diagrama de classe, diagrama de sequência e o código do caso Selencionar Interface
+
+WHO: Luiz Sergio       How: Umbrello/ Java
+
+========================================================================================================================================================
+
+
+========================================================================================================================================================
+Versao 0.2.0: Selecionar Oponente
+
+When: 24/11/2010       Where: EST/UEA    WHY: Adaptar e atualizar o diagrama de classe, diagrama de sequência e o código do caso Selecionar Oponente 
+
+WHO: Luiz Sergio       How: Umbrello/ Java
+
+========================================================================================================================================================
+
+========================================================================================================================================================
+Versao 0.3.0: Iniciar Partida
+
+When: 24/11/2010       Where: EST/UEA    WHY: Adaptar e atualizar o diagrama de classe, diagrama de sequência e o código do caso Iniciar Partida 
+
+WHO: Victor Matheus       How: Umbrello/ Java
+
+========================================================================================================================================================
+
+========================================================================================================================================================
+Versao 0.4.0: Jogar Humano vs Humano
+
+When: 24/11/2010       Where: EST/UEA    WHY: Adaptar e atualizar o diagrama de classe, diagrama de sequência e o código do caso Jogar Humano vs Humano
+
+WHO: Victor Matheus       How: Umbrello/ Java
+
+========================================================================================================================================================
+
+========================================================================================================================================================
+Versao 0.5.0: Jogar Humano vs Robo
+
+When: 24/11/2010       Where: EST/UEA    WHY: Adaptar e atualizar o diagrama de classe, diagrama de sequência e o código do caso Jogar Humano vs Robo
+
+WHO: Victor Matheus       How: Umbrello/ Java
+
+========================================================================================================================================================
+
+========================================================================================================================================================
+Versao 0.6.0: Abortar Partida
+
+When: 24/11/2010       Where: EST/UEA    WHY: Adaptar e atualizar o diagrama de classe, diagrama de sequência e o código do caso Abortar Partida
+
+WHO: Juliana Martins       How: Umbrello/ Java
+
+========================================================================================================================================================
+
+========================================================================================================================================================
+Versao 0.7.0: Finalizar Aplicativo
+
+When: 24/11/2010       Where: EST/UEA    WHY: Adaptar e atualizar o diagrama de classe, diagrama de sequência e o código do caso Finalizar Aplicativo
+
+WHO: Juliana Martins      How: Umbrello/ Java
+
+========================================================================================================================================================
+
+========================================================================================================================================================
+Versao 1.0.0: Jogo da Velha
+
+When: 24/11/2010       Where: EST/UEA    WHY: Verificar bugs e aprimorar o projeto Jogo da Velha
+
+WHO: Juliana Martins       How: Umbrello/ Java
+
+========================================================================================================================================================
+
+

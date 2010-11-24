@@ -1,0 +1,27 @@
+Caso de Uso: Selencionar Nível
+
+Sumário: O jogador selecionará o nível do jogo
+
+Ator Primário:  Jogador
+
+Ator Secundário: s/ ator
+
+Pré-condição:
+	O jogador deve ter escolhido o oponente máquina (computador)
+
+Fluxo Principal:
+	1. - O jogador seleciona o nível do jogo
+	2. - O jogador confirma a escolha
+
+Fluxo Alternativo:
+	1.a - O jogador seleciona o nível de jogo fácil
+	1.b - O jogador seleciona o nível de jogo médio
+	1.c - O jogador seleciona o nível de jogo difícil
+
+Fluxo Exceção:
+	1.a - O jogador escolheu nível de jogo inexistente
+		1.a.1 - O jogador seleciona um nível inexistente
+		1.a.2 - O sistema exibe uma mensagem de erro
+
+Pós-condição:
+	O nível de jogo contra o oponente máquina(computador) é selecionado.

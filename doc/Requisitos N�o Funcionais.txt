@@ -1,0 +1,11 @@
+Requisitos Não-Funcionais:
+
+I) O Software deve ser multiplataforma
+
+II) O Software deve oferecer interface de linha de comando
+
+III) O Software deve oferecer interface gráfica
+
+IV) Deve ser usado o modelo UEANO
+
+V) O Software deve possuir documentação em UML 2.0
