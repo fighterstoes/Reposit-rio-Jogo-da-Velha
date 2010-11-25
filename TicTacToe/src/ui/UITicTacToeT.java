@@ -13,12 +13,11 @@ public class UITicTacToeT {
 			while(!ControlTicTacToe.isGameOver()){
 				writeTable();
 				readMoveT();
-				if(!ControlTicTacToe.isMach())break; //abort mach
+				if(!ControlTicTacToe.isMach())break; //abortou partida 
 				verifyStatus();
 			}
 			System.out.println("Deseja jogar outra partida? 0 = não\n");
 		}while(sc.nextInt()!=0);
-		System.exit(0);
 	}
 
 	static void writeTable(){
@@ -91,14 +90,13 @@ public class UITicTacToeT {
 					robotMove=false;
 				}else{
 					readMoveT(); 
-					if(!ControlTicTacToe.isMach())break; //abort mach
+					if(!ControlTicTacToe.isMach())break; 
 					robotMove=true;
 				}
 				verifyStatus();
 			}
 			System.out.println("Deseja jogar outra partida? 0 = não");
 		}while(sc.nextInt()!=0);
-		System.exit(0); 
 	}
 
 }
