@@ -28,6 +28,10 @@ public class RulesTicTacToe {
 		return turn;
 	}
 
+	public static void abortMach() {
+		mach=false;
+	}
+
 	public static char[][] getTable() {
 		return table;
 	}
@@ -283,5 +287,11 @@ public class RulesTicTacToe {
 					else 
 						if(isValidMove(0,2))mark(0, 2);
 		}
+
+		
 	}
+
+
+
+
 }

@@ -22,6 +22,10 @@ public class ControlTicTacToe {
 			return true;
 		}else return false;
 	}
+
+	public static void abortMach() {
+		RulesTicTacToe.abortMach();
+	}
 	
 	public static char[][] getTable(){
 		return RulesTicTacToe.getTable();
@@ -32,7 +36,7 @@ public class ControlTicTacToe {
 	}
 	
 	public static void robotMove() {
-		RulesTicTacToe.robotMove();
+			RulesTicTacToe.robotMove();
 	}
 
 	public static boolean isDraw() {

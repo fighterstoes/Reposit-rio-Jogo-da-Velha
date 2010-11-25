@@ -13,6 +13,7 @@ public class UITicTacToeT {
 			while(!ControlTicTacToe.isGameOver()){
 				writeTable();
 				readMoveT();
+				if(!ControlTicTacToe.isMach())break; //abort mach
 				verifyStatus();
 			}
 			System.out.println("Deseja jogar outra partida? 0 = não\n");
@@ -50,8 +51,10 @@ public class UITicTacToeT {
 			i = sc.nextInt();
 			System.out.printf(" coluna:");
 			j = sc.nextInt();
-			ok = ControlTicTacToe.isValidMove(i,j);
-			if(!ok) System.out.println("Posição Ocupada");
+			if(!wantToAbort(i,j)){
+				ok = ControlTicTacToe.isValidMove(i,j);
+				if(!ok) System.out.println("Posição Ocupada");
+			}else break;
 		}while(!ok);
 	}
 
@@ -59,6 +62,14 @@ public class UITicTacToeT {
 		if (ControlTicTacToe.isWon()){System.out.println("\t"+(ControlTicTacToe.getTurn()=='o'?'X':'O')+" ganhou!\n");}
 		else if (ControlTicTacToe.isDraw()){System.out.println("Ops! Velhou...\n");}
 		if(ControlTicTacToe.isWon()||ControlTicTacToe.isDraw()) writeTable();
+	}
+
+	static boolean wantToAbort(int i, int j){
+		Scanner sc = new Scanner(System.in);
+		if((i>2)||(i<0)||(j>2)||(j<0)){
+			System.out.println("Digitou uma posição invalida\nDeseja Abortar a partida? 0 = Sim");
+			if(0==sc.nextInt()){ControlTicTacToe.abortMach(); return true;}
+		}return false;
 	}
 
 	public static void startGameTR() {
@@ -80,6 +91,7 @@ public class UITicTacToeT {
 					robotMove=false;
 				}else{
 					readMoveT(); 
+					if(!ControlTicTacToe.isMach())break; //abort mach
 					robotMove=true;
 				}
 				verifyStatus();
