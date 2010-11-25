@@ -24,7 +24,7 @@ public class UITicTacToe {
 				iu='t';
 				System.out.println("Modo Texto Ativado");
 				selectOponentT();
-				System.out.println("* A qualquer momento durante o jogo você pode entrar uma posição inválida p/ abortar a partida\n");
+				System.err.println("* A qualquer momento durante o jogo você pode entrar uma posição inválida p/ abortar a partida\n");
 			}else if (args[0].equals("g")){
 				iu='g';
 				JOptionPane.showMessageDialog(null, "Tic Tac Toes");
