@@ -112,26 +112,30 @@ public class RulesTicTacToe {
 			   7. Empty corner: Play in a corner square.
 			   8. Empty side: Play in a middle square on any of the 4 sides. */
 			switch (n) {
-			case 0: if(isValidMove(1,1))mark(1, 1); break;
-			case 1:
-				if(isValidMove(1,1))mark(1, 1);
-				else
+			case 0: if(isValidMove(1,1))mark(1, 1); break; //first play: mark in the center
+			case 1: //second play
+				if(isValidMove(1,1))mark(1, 1); //try to play in the center 
+				else //else if opponent marked a corner, mark next to it
 					if(!isValidMove(0,0)){
 						if(isValidMove(0,1)) mark(0, 1);
-						else if(isValidMove(1,0)) mark(1, 0);
+						else 
+							if(isValidMove(1,0)) mark(1, 0);
 					}else
 						if(!isValidMove(0,2)){
 							if(isValidMove(0,1)) mark(0, 1);
-							else if(isValidMove(1,2)) mark(1, 2);
+							else 
+								if(isValidMove(1,2)) mark(1, 2);
 						}else
 							if(!isValidMove(2,0)){
 								if(isValidMove(1,0)) mark(1, 0);
-								else if(isValidMove(2,1)) mark(2, 1);
+								else
+									if(isValidMove(2,1)) mark(2, 1);
 							}else
 								if(!isValidMove(2,2)){
 									if(isValidMove(1,2)) mark(1, 2);
-									else if(isValidMove(2,1)) mark(2, 1);
-								}else
+									else
+										if(isValidMove(2,1)) mark(2, 1);
+								}else //else,it self plays in a corner 
 									if(isValidMove(2,0))mark(2, 0);
 									else
 										if(isValidMove(2,2))mark(2, 2);
@@ -140,39 +144,47 @@ public class RulesTicTacToe {
 											else 
 												if(isValidMove(0,2))mark(0, 2);
 				break;
-			case 2: 
-				if((!isValidMove(0,0))&&(table[0][0]==turn)){
+			case 2: //third play
+				if((!isValidMove(0,0))&&(table[0][0]==turn)){ //if already marked a corner, mark the opposite corner to it
 					if(isValidMove(0,2)) mark(0, 2);
-					else if(isValidMove(2,0)) mark(2, 0);
+					else 
+						if(isValidMove(2,0)) mark(2, 0);
 				}else
 					if((!isValidMove(0,2))&&(table[0][2]==turn)){
 						if(isValidMove(0,0)) mark(0, 0);
-						else if(isValidMove(2,0)) mark(2, 0);
+						else 
+							if(isValidMove(2,0)) mark(2, 0);
 					}else
 						if((!isValidMove(2,0))&&(table[2][0]==turn)){
 							if(isValidMove(0,0)) mark(0, 0);
-							else if(isValidMove(2,2)) mark(2, 2);
+							else 
+								if(isValidMove(2,2)) mark(2, 2);
 						}else
 							if((!isValidMove(2,2))&&(table[2][2]==turn)){
 								if(isValidMove(0,2)) mark(0, 2);
-								else if(isValidMove(2,0)) mark(2, 0);
-							}else 
+								else 
+									if(isValidMove(2,0)) mark(2, 0);
+							}else //else if the opponent marked a corner mark next to it  
 								if(!isValidMove(0,0)){
 									if(isValidMove(0,1)) mark(0, 1);
-									else if(isValidMove(1,0)) mark(1, 0);
+									else
+										if(isValidMove(1,0)) mark(1, 0);
 								}else
 									if(!isValidMove(0,2)){
 										if(isValidMove(0,1)) mark(0, 1);
-										else if(isValidMove(1,2)) mark(1, 2);
+										else
+											if(isValidMove(1,2)) mark(1, 2);
 									}else
 										if(!isValidMove(2,0)){
 											if(isValidMove(1,0)) mark(1, 0);
-											else if(isValidMove(2,1)) mark(2, 1);
+											else
+												if(isValidMove(2,1)) mark(2, 1);
 										}else
 											if(!isValidMove(2,2)){
 												if(isValidMove(1,2)) mark(1, 2);
-												else if(isValidMove(2,1)) mark(2, 1);
-											}else
+												else
+													if(isValidMove(2,1)) mark(2, 1);
+											}else //else mark a corner 
 												if(isValidMove(2,0))mark(2, 0);
 												else
 													if(isValidMove(2,2))mark(2, 2);
@@ -182,53 +194,114 @@ public class RulesTicTacToe {
 															if(isValidMove(0,2))mark(0, 2);
 				break;
 			case 3: case 5: case 7:
-				changeTurn();
+				changeTurn(); //it is to easy the comparation
 				for(int i=0;i<3;i++){
 					if((table[i][0]!=' ')&&(table[i][0]==turn)){
-						if ((table[i][0]==table[i][1])&&(isValidMove(i, 2))){changeTurn(); mark(i,2); marked=true; break;}
-						else if ((table[i][0]==table[i][2])&&(isValidMove(i, 1))){changeTurn(); mark(i,1); marked=true; break;}
-					}else if((table[i][1]!=' ')&&(table[i][1]==turn)&&(table[i][1]==table[i][2])&&(isValidMove(i, 0))){changeTurn(); mark(i,0); marked=true; break;}//linhas
-					else if((table[0][i]!=' ')&&(table[0][1]==turn)){
-						if ((table[0][i]==table[1][i])&&(isValidMove(2, i))){changeTurn(); mark(2,i); marked=true; break;}
-						else if ((table[0][i]==table[2][i])&&(isValidMove(1, i))){changeTurn(); mark(1,i); marked=true; break;}
-					}else if((table[1][i]!=' ')&&(table[1][i]==turn)&&(table[1][i]==table[2][i])&&(isValidMove(0, i))){changeTurn(); mark(0,i); marked=true; break;}//colunas
+						if ((table[i][0]==table[i][1])&&(isValidMove(i, 2))){
+							changeTurn(); mark(i,2); marked=true; break;
+						}else 
+							if ((table[i][0]==table[i][2])&&(isValidMove(i, 1))){
+								changeTurn(); mark(i,1); marked=true; break;
+							}
+					}else 
+						if((table[i][1]!=' ')&&(table[i][1]==turn)&&(table[i][1]==table[i][2])&&(isValidMove(i, 0))){
+							changeTurn(); mark(i,0); marked=true; break;//until here verifies if a line is about to be formed and try to prevent it
+						}else 
+							if((table[0][i]!=' ')&&(table[0][i]==turn)){
+								if ((table[0][i]==table[1][i])&&(isValidMove(2, i))){
+									changeTurn(); mark(2,i); marked=true; break;
+								}else 
+									if ((table[0][i]==table[2][i])&&(isValidMove(1, i))){
+										changeTurn(); mark(1,i); marked=true; break;
+									}
+							}else 
+								if((table[1][i]!=' ')&&(table[1][i]==turn)&&(table[1][i]==table[2][i])&&(isValidMove(0, i))){
+									changeTurn(); mark(0,i); marked=true; break;//'till here verifies if a column is about to be formed and try to prevent it too 
+								}
 				}
-				if(!marked){
-					if((table[0][0]!=' ')&&(table[0][0]==turn)){
-						if((table[0][0]==table[1][1])&&(isValidMove(2, 2))){changeTurn();mark(2, 2);marked=true;}
-						else if((table[0][0]==table[2][2])&&(isValidMove(1, 1))){changeTurn();mark(1, 1);marked=true;}
-					}else if((table[1][1]!=' ')&&(table[1][1]==turn)&&(table[1][1]==table[2][2])&&(isValidMove(0, 0))){changeTurn();mark(0, 0);marked=true;} //diagonal principal
-					else if((table[0][2]!=' ')&&(table[0][2]==turn)){
-						if((table[0][2]==table[1][1])&&(isValidMove(2, 0))){changeTurn();mark(2, 0);marked=true;}
-						else if((table[0][2]==table[2][0])&&(isValidMove(1, 1))){changeTurn();mark(1, 1);marked=true;}
-					}else if((table[1][1]!=' ')&&(table[1][1]==turn)&&(table[1][1]==table[2][0])&&(isValidMove(0, 2))){changeTurn();mark(0, 2);marked=true;} //diagonal secundadria
-					if(!marked){
+				if(!marked){//if hasn't marked nothing yet
+					if((table[0][0]!=' ')&&(table[0][0]==turn)){ //verify the diagonals 
+						if((table[0][0]==table[1][1])&&(isValidMove(2, 2))){
+							changeTurn();mark(2, 2);marked=true;
+						}else 
+							if((table[0][0]==table[2][2])&&(isValidMove(1, 1))){
+								changeTurn();mark(1, 1);marked=true;
+							}
+					}else
+						if((table[1][1]!=' ')&&(table[1][1]==turn)&&(table[1][1]==table[2][2])&&(isValidMove(0, 0))){
+							changeTurn();mark(0, 0);marked=true; //principal diagonal
+						}else 
+							if((table[0][2]!=' ')&&(table[0][2]==turn)){
+								if((table[0][2]==table[1][1])&&(isValidMove(2, 0))){
+									changeTurn();mark(2, 0);marked=true;
+								}else 
+									if((table[0][2]==table[2][0])&&(isValidMove(1, 1))){
+										changeTurn();mark(1, 1);marked=true;
+									}
+							}else 
+								if((table[1][1]!=' ')&&(table[1][1]==turn)&&(table[1][1]==table[2][0])&&(isValidMove(0, 2))){
+									changeTurn();mark(0, 2);marked=true;
+								} //secondary diagonal
+					if(!marked){//if nothing works...
 						changeTurn();
 						midleOrConer();
 					}
 				}
 				break;
 			case 4: case 6: case 8:
-				for(int i=0;i<3;i++){
+				for(int i=0;i<3;i++){ 
 					if((table[i][0]!=' ')&&(table[i][0]==turn)){
-						if ((table[i][0]==table[i][1])&&(isValidMove(i, 2))){ mark(i,2); marked=true; break;}
-						else if ((table[i][0]==table[i][2])&&(isValidMove(i, 1))){ mark(i,1); marked=true; break;}
-					}else if((table[i][1]!=' ')&&(table[i][1]==turn)&&(table[i][1]==table[i][2])&&(isValidMove(i, 0))){ mark(i,0); marked=true; break;}//linhas
-					if((table[0][i]!=' ')&&(table[0][1]==turn)){
-						if ((table[0][i]==table[1][i])&&(isValidMove(2, i))){ mark(2,i); marked=true; break;}
-						else if ((table[0][i]==table[2][i])&&(isValidMove(1, i))){ mark(1,i); marked=true; break;}
-					}else if((table[1][i]!=' ')&&(table[1][i]==turn)&&(table[1][i]==table[2][i])&&(isValidMove(0, i))){ mark(0,i); marked=true; break;}//colunas
+						if ((table[i][0]==table[i][1])&&(isValidMove(i, 2))){ 
+							mark(i,2); marked=true; break;
+						}
+						else 
+							if ((table[i][0]==table[i][2])&&(isValidMove(i, 1))){
+								mark(i,1); marked=true; break;
+							}
+					}else 
+						if((table[i][1]!=' ')&&(table[i][1]==turn)&&(table[i][1]==table[i][2])&&(isValidMove(i, 0))){ 
+							mark(i,0); marked=true; break;//until here verifies if a line is about to be formed and try to finish it
+						}
+					if((table[0][i]!=' ')&&(table[0][i]==turn)){
+						if ((table[0][i]==table[1][i])&&(isValidMove(2, i))){ 
+							mark(2,i); marked=true; break;
+						}
+						else 
+							if ((table[0][i]==table[2][i])&&(isValidMove(1, i))){
+								mark(1,i); marked=true; break;
+							}
+					}else
+						if((table[1][i]!=' ')&&(table[1][i]==turn)&&(table[1][i]==table[2][i])&&(isValidMove(0, i))){ 
+							mark(0,i); marked=true; break;//until here verifies if a column is about to be formed and try to finish it
+						}
 				}
 
 				if(!marked){
 					if((table[0][0]!=' ')&&(table[0][0]==turn)){
-						if((table[0][0]==table[1][1])&&(isValidMove(2, 2))){mark(2, 2);marked=true;}
-						else if((table[0][0]==table[2][2])&&(isValidMove(1, 1))){mark(1, 1);marked=true;}
-					}else if((table[1][1]!=' ')&&(table[1][1]==turn)&&(table[1][1]==table[2][2])&&(isValidMove(0, 0))){mark(0, 0);marked=true;} //diagonal principal
-					else if((table[0][2]!=' ')&&(table[0][2]==turn)){
-						if((table[0][2]==table[1][1])&&(isValidMove(2, 0))){mark(2, 0);marked=true;}
-						else if((table[0][2]==table[2][0])&&(isValidMove(1, 1))){mark(1, 1);marked=true;}
-					}else if((table[1][1]!=' ')&&(table[1][1]==turn)&&(table[1][1]==table[2][0])&&(isValidMove(0, 2))){mark(0, 2);marked=true;} //diagonal secundadria
+						if((table[0][0]==table[1][1])&&(isValidMove(2, 2))){
+							mark(2, 2);marked=true;
+						}
+						else 
+							if((table[0][0]==table[2][2])&&(isValidMove(1, 1))){
+								mark(1, 1);marked=true;
+							}
+					}else 
+						if((table[1][1]!=' ')&&(table[1][1]==turn)&&(table[1][1]==table[2][2])&&(isValidMove(0, 0))){
+							mark(0, 0);marked=true;
+						} //diagonal principal
+						else 
+							if((table[0][2]!=' ')&&(table[0][2]==turn)){
+								if((table[0][2]==table[1][1])&&(isValidMove(2, 0))){
+									mark(2, 0);marked=true;
+								}
+								else 
+									if((table[0][2]==table[2][0])&&(isValidMove(1, 1))){
+										mark(1, 1);marked=true;
+									}
+							}else 
+								if((table[1][1]!=' ')&&(table[1][1]==turn)&&(table[1][1]==table[2][0])&&(isValidMove(0, 2))){mark(
+										0, 2);marked=true;
+								} //diagonal secundadria
 					if(!marked){
 						midleOrConer();
 					}
@@ -244,7 +317,7 @@ public class RulesTicTacToe {
 		}
 	}
 
-	private static void midleOrConer() {
+	private static void midleOrConer() { //...tries to mark in the midle of a calumn or line... or in the corner
 		boolean marked = false;
 		if((!isValidMove(0,0))&&(table[0][0]==turn))
 			if(isValidMove(0,2)){ mark(0, 2); marked=true;}
@@ -288,7 +361,7 @@ public class RulesTicTacToe {
 						if(isValidMove(0,2))mark(0, 2);
 		}
 
-		
+
 	}
 
 

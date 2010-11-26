@@ -46,7 +46,7 @@ public class UITicTacToe {
 		System.exit(0);
 		break;
 		}
-		
+
 		boolean jogar = true;
 		do{
 			if(iu=='t'){ 
@@ -56,9 +56,8 @@ public class UITicTacToe {
 				}else{ 
 					System.out.println("Boa Sorte contra nossa lógica (^.~) ");
 					do{
-						System.out.println("Qual nivel? Fácil = 0 , Impossivel = 1");
-						Scanner sc = new Scanner(System.in);
-						lv = sc.nextInt();
+							System.out.println("Qual nivel? Fácil = 0 , Impossivel = 1");
+							lv = readInt();
 					}while(lv>1);
 					ControlTicTacToe.setLevel(lv);
 					UITicTacToeT.startGameTR();}
@@ -66,13 +65,23 @@ public class UITicTacToe {
 			}else{
 				if(op=='c') JOptionPane.showMessageDialog(null,"Boa Sorte contra nossa lógica (^.~) ");
 				else JOptionPane.showMessageDialog(null, "Bom jogo para vocês (^.^)v ");
-				
 				JOptionPane.showMessageDialog(null,"Futura implementação");
 				selectOponentG();
 			}
 			jogar = (op!=' '?true:false);
 		}while(jogar);
-		
+
+	}
+
+	protected static int readInt() {
+		Scanner sc = new Scanner(System.in);
+		int y;
+		try {
+			y = sc.nextInt();
+		} catch (Exception e) {
+		    return Integer.MAX_VALUE;
+		}
+		return y;
 	}
 
 	private static void selectOponentG() {
@@ -87,11 +96,10 @@ public class UITicTacToe {
 		op=' ';
 		do{
 			System.out.println("Quem é seu oponente? 0 - Computador; 1 - Player2; 2 - Sair ");
-			Scanner sc = new Scanner(System.in);
-			int opi = sc.nextInt();
+			int opi = readInt();
 			if(!optionSelected(opi)) System.out.println("\tEntre uma opção de adversario válida\n");
 		}while((op!='c')&&(op!='p'));
-		
+
 	}
 
 	private static boolean optionSelected(int opi) {

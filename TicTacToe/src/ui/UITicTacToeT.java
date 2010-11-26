@@ -4,10 +4,9 @@ import java.util.Scanner;
 
 import business.ControlTicTacToe;
 
-public class UITicTacToeT {
+public class UITicTacToeT extends UITicTacToe{
 
 	public static void startGameTP(){
-		Scanner sc = new Scanner(System.in);;
 		do{
 			ControlTicTacToe.startMach();
 			while(!ControlTicTacToe.isGameOver()){
@@ -17,7 +16,7 @@ public class UITicTacToeT {
 				verifyStatus();
 			}
 			System.out.println("Deseja jogar outra partida? 0 = não\n");
-		}while(sc.nextInt()!=0);
+		}while(readInt()!=0);
 	}
 
 	static void writeTable(){
@@ -42,14 +41,13 @@ public class UITicTacToeT {
 
 	static void readMoveT(){
 		System.out.println("Jogador "+ControlTicTacToe.getTurn());
-		Scanner sc = new Scanner(System.in);
 		int i,j;
 		boolean ok;
 		do{
 			System.out.printf(" linha:");
-			i = sc.nextInt();
+			i = readInt();
 			System.out.printf(" coluna:");
-			j = sc.nextInt();
+			j = readInt();
 			if(!wantToAbort(i,j)){
 				ok = ControlTicTacToe.isValidMove(i,j);
 				if(!ok) System.out.println("Posição Ocupada");
@@ -64,23 +62,21 @@ public class UITicTacToeT {
 	}
 
 	static boolean wantToAbort(int i, int j){
-		Scanner sc = new Scanner(System.in);
 		if((i>2)||(i<0)||(j>2)||(j<0)){
 			System.out.println("Digitou uma posição invalida\nDeseja Abortar a partida? 0 = Sim");
-			if(0==sc.nextInt()){ControlTicTacToe.abortMach(); return true;}
+			if(0== readInt()){ControlTicTacToe.abortMach(); return true;}
 		}return false;
 	}
 
 	public static void startGameTR() {
-		Scanner sc = new Scanner(System.in);
 		do{
 			ControlTicTacToe.startMach();
 			boolean robotMove;
 			System.out.println("Quer ser o jogador o (bola) ? 0 = Sim \n Se não, qualquer outro número p/ ser o jogador x (xis)");
-			if(sc.nextInt()!=0)ControlTicTacToe.changeTurn();
+			if(readInt()!=0)ControlTicTacToe.changeTurn();
 			System.out.println("Você é:"+ String.valueOf(ControlTicTacToe.getTurn()).toUpperCase());
 			System.out.println("Quer jogar primeiro? 0 == Sim \n Se entrar com qual quer outro número, eu começo (*-*)");
-			robotMove = ((sc.nextInt()==0)?false:true);
+			robotMove = ((readInt()==0)?false:true);
 			if(robotMove) ControlTicTacToe.changeTurn();
 			while(!ControlTicTacToe.isGameOver()){
 				writeTable();
@@ -96,7 +92,7 @@ public class UITicTacToeT {
 				verifyStatus();
 			}
 			System.out.println("Deseja jogar outra partida? 0 = não");
-		}while(sc.nextInt()!=0);
+		}while(readInt()!=0);
 	}
 
 }
